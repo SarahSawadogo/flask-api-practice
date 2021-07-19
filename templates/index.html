@@ -1,11 +1,14 @@
 <html>
     <head>
         <title>Welcome!</title>
+        <!-- The {{ time }} variable is being added to the CSS, 
+            so our browser is tricked into reloading a CSS everytime we refresh-->
         <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
     </head>
     <body>
         <h1>Welcome to GifBot!</h1>
         <p>What kind of gif would you like to see?</p>
+        <!-- Reminder that because the form is using a post method, you have to include that in the /yourgif route in app.py -->
         <form method="post" action="/yourgif">
             <input type="text" name="gifchoice" placeholder="What kind of gif do you want to see?"/>
             <input type="submit" value="Submit"/>

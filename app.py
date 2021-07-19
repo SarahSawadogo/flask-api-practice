@@ -7,8 +7,9 @@ import os #import os allows us to access environmental variables that
 
 # -- Initialization section --
 app = Flask(__name__)
-#need to pull API Key from .env for later use
-#the .env file with the key does not get pushed to Github since it is in .gitignore file
+#os.getenv() is how you pull private information (such as an API key) without revealing it in the code. 
+#the .env file with the actual key does not get pushed to Github since it is in .gitignore file
+#The string inside app.config ("GIPHY_KEY") is what you need to specify in heroku's config vars in settings for your app to run
 app.config["GIPHY_KEY"] = os.getenv("GIPHY_KEY")
 
 
