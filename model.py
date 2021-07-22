@@ -1,11 +1,11 @@
 import requests
 
 #this function should return a string that is the link to the giphy image based on user input (query)
-def getImageUrlFrom(query, key):
+def getImageUrlFrom(query):
     #GIPHY search URL with dynamic query 
     #(f in front of string in Python creates a formatted string that you can include variables with in {}.
     #This is potentially cleaner then using the + for concantenation)
-    giphy_get = f"https://api.giphy.com/v1/gifs/search?api_key={key}&q={query}&limit=25&offset=0&rating=g&lang=en"
+    giphy_get = f"https://api.giphy.com/v1/gifs/search?api_key=LLbmPKaorNSdpO3G3qhqduUS3u7HzxDZ&q={query}&limit=25&offset=0&rating=g&lang=en"
     #converts data into json data structure
     response = requests.get(giphy_get).json()
     #if condition returns first giphy result if there is at least one result
